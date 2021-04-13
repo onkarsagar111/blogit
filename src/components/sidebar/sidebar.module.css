@@ -1,0 +1,41 @@
+.Sidebar {
+    background-color: rgb(43, 43, 43);
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0%;
+    color: white;
+}
+
+.ul {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding:0%;
+}
+
+.NavigationItem {
+    padding: 10px;
+    font-weight: bold;
+    height: 40px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.Inactive{
+    text-decoration: none;
+    color: #f0ffff;
+}
+
+.NavigationItem a.Inactive:hover,
+.NavigationItem a.Inactive:active,
+.NavigationItem a.Inactive.active {
+    color: #0072C6;
+    text-decoration: none;
+}
+
+.Sidebar li:hover{
+    border-left: #0072C6 3px solid;
+    background-color: rgb(34, 34, 34);
+}

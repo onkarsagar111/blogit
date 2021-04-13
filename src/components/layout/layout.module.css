@@ -1,0 +1,9 @@
+.Layout {
+    position: fixed;
+    top: 60px;
+    left: 15%;
+    height: 100%;
+    width: 85%;
+    background-color: #0072C6;
+    overflow: scroll;
+}

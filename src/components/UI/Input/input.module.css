@@ -1,0 +1,23 @@
+.Input {
+    position: absolute;
+    left: 100px;
+    padding: 8px;
+    height: 40px;
+    margin-left: 20px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    width: 80%;
+    display: block;
+    overflow: hidden;
+}
+
+.Valid {
+    border: 2px solid green;
+    border-radius: 8px;
+    background-color: lightgreen;
+}
+.Invalid {
+    border: 2px solid red;
+    border-radius: 8px;
+    background-color: salmon;
+}
