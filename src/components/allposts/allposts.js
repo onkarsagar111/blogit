@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Main from '../../helper/main/main';
 import FullPost from '../fullPost/fullPost';
 
 import Post from '../post/post';
@@ -61,9 +62,11 @@ const AllPosts = (props) => {
 
 
     return (
-        <div className={classes.AllPosts}>
-            {content}
-        </div>
+        <Main miniMode={props.miniMode}>
+            <div className={classes.AllPosts}>
+                {content}
+            </div>
+        </Main>
     )
 }
 

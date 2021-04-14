@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-const Themes = (params) => {
+import Main from '../../helper/main/main';
+
+const Themes = (props) => {
+
     return (
-        <div>
+        <Main miniMode={props.miniMode}>
             <h1>I am Themes</h1>
-        </div>
+        </Main>
     )
 }
 

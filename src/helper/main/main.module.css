@@ -1,0 +1,23 @@
+.MainMin {
+    position: fixed;
+    top: 60px;
+    left: 4%;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background-color: #58c6d5;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+.MainMax {
+    position: fixed;
+    top: 60px;
+    left: 15%;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background-color: #58c6d5;
+    z-index: 1;
+    transition: 0.4s;
+}
