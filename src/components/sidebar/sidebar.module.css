@@ -13,14 +13,17 @@
     list-style-position: inside;
     margin: 0;
     padding:0%;
+    margin-top: 20px;
 }
 
 .NavigationItem {
     padding: 10px;
     font-weight: bold;
-    height: 40px;
+    height: fit-content;
     vertical-align: middle;
     text-decoration: none;
+    margin-top: 20px;
+
 }
 
 .Inactive{
@@ -39,3 +42,27 @@
     border-left: #0072C6 3px solid;
     background-color: rgb(34, 34, 34);
 }
+
+.label {
+    margin-left: 20px;
+
+}
+
+.content {
+    padding: 10px;
+    font-weight: bold;
+    height: 40px;
+    vertical-align: middle;
+    text-decoration: none;
+    /* margin-top: 30px; */
+    /* margin-bottom: 30px; */
+}
+
+/* .li :hover {
+    background-color: rgb(43, 43, 43);
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0%;
+    color: white;} */

@@ -8,8 +8,8 @@ const Sidebar = () => {
 
     return (
         <div className={classes.Sidebar}>
-            <Icon name='content' size/>
             <ul className={classes.ul}>
+              <label className={classes.content}><Icon size="big" name='content'/></label>
                 <NavLink to="/createpost"
                     className={classes.Inactive}
                     activeStyle={{
@@ -17,7 +17,9 @@ const Sidebar = () => {
                         fontSize: 'large'
                     }}
                 >
-                    <li className={classes.NavigationItem}>                        Create New Post</li>
+                    <li className={classes.NavigationItem}><Icon size="big" name='add' />
+                        <label className={classes.label} >Create New Post</label>
+                    </li>
                 </NavLink>
 
                 <NavLink to="/allposts"
@@ -27,7 +29,9 @@ const Sidebar = () => {
                         fontSize: 'large'
                     }}
                 >
-                    <li className={classes.NavigationItem}>                        All Posts</li>
+                    <li className={classes.NavigationItem}> <Icon size="big" name='file alternate'  />
+                        <label className={classes.label}>All Posts</label>
+                    </li>
                 </NavLink>
 
                 <NavLink to="/themes"
@@ -37,7 +41,9 @@ const Sidebar = () => {
                         fontSize: 'large'
                     }}
                 >
-                    <li className={classes.NavigationItem}>                        Themes</li>
+                    <li className={classes.NavigationItem}>  <Icon size="big" name='theme' />
+                        <label className={classes.label}>Themes </label>
+                    </li>
                 </NavLink>
 
                 <NavLink to="/settings"
@@ -47,7 +53,11 @@ const Sidebar = () => {
                         fontSize: 'large'
                     }}
                 >
-                    <li className={classes.NavigationItem}>                        Settings</li>
+
+                    <li className={classes.NavigationItem}> <Icon size="big" name='setting' />
+                        <label className={classes.label}> Settings</label>
+                    </li>
+
                 </NavLink>
 
                 <NavLink to="/todo"
@@ -58,7 +68,9 @@ const Sidebar = () => {
                         fontSize: 'large',
                         textDecoration: 'none'
                     }}>
-                    <li className={classes.NavigationItem}>TODO list</li>
+                    <li className={classes.NavigationItem}><Icon size="big" name='tasks' />
+                        <label className={classes.label}>TODO list</label>
+                    </li>
                 </NavLink>
 
             </ul>
