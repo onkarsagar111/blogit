@@ -14,6 +14,7 @@ import Todo from '../todo/todo';
 const Layout = (props) => {
 
     const [miniMode, setMiniMode] = useState(true);
+    const [clickHam, setClickHam] = useState(false);
 
     const collapseSidebar = () => {
         setMiniMode(true);
@@ -23,6 +24,7 @@ const Layout = (props) => {
     }
     const toggleSidebar = () => {
         setMiniMode(!miniMode);
+        setClickHam(!clickHam);
     }
 
     return (
@@ -88,7 +90,7 @@ const Layout = (props) => {
                     }
                 />
             </Switch>
-            <Sidebar miniMode={miniMode} expandSidebar={expandSidebar} collapseSidebar={collapseSidebar} toggleSidebar={toggleSidebar} />
+            <Sidebar clickHam={clickHam} miniMode={miniMode} expandSidebar={expandSidebar} collapseSidebar={collapseSidebar} toggleSidebar={toggleSidebar} />
             <Titlebar />
         </div>
     );

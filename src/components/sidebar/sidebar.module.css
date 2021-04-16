@@ -6,7 +6,7 @@
     top: 60px;
     left: 0%;
     color: white;
-    transition: 0.5s;
+    transition: 0.4s;
     white-space: nowrap;
     z-index:-1;
 }
@@ -19,7 +19,7 @@
     top: 60px;
     left: 0%;
     color: white;
-    transition: 0.5s;
+    transition: 0.4s;
     white-space: nowrap;
     z-index: -1;
 }
@@ -86,5 +86,15 @@
     text-decoration: none;
     margin-top: 16px;
     color: #848d95;
+    cursor:pointer;
+}
+/* 
+.Icon:hover{
+    color:white;
+} */
+
+.contentSelected{
+    color:#58c6d5;
+
 }
 
