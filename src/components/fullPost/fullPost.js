@@ -1,6 +1,5 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
-import Main from '../../helper/main/main';
 
 import classes from './fullPost.module.css';
 

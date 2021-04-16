@@ -1,8 +1,8 @@
 .FullPost {
-    /* position: absolute; */
-    width: 100%;
-    /* left: 50%;
-    transform: translateX(-50%); */
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 80px;
     padding: 10%;
     border:#004094 solid 3px;
