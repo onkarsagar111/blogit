@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter basename="/">
       <div>
         <Layout >
-          <Switch>
+          {/* <Switch>
             <Route
               path="/createpost"
               exact
@@ -43,7 +43,7 @@ function App() {
               path="/"
               component={AllPosts}
             />
-          </Switch>
+          </Switch> */}
         </Layout>
       </div>
     </BrowserRouter>
