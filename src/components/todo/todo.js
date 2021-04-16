@@ -19,8 +19,6 @@ const Todo = (props) => {
                 <li>Save functionality</li>
                 <li>Profile</li>
                 <li>Theme</li>
-                <li> 
-                     <a href="https://visme.co/blog/website-color-schemes/">page for themes  </a></li>
                 <li>...add more</li>
                 
             </ul>
