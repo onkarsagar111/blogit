@@ -1,9 +1,9 @@
 import React from 'react';
-import Auxiliary from '../../hoc/auxiliary/auxiliary';
+import Main from '../../helper/main/main';
 
 const Todo = (props) => {
     return (
-        <Auxiliary>
+        <Main miniMode={props.miniMode}>
             <h3>Functionalities to be developed</h3>
             <ul>
                 <li>Login screen</li>
@@ -19,11 +19,18 @@ const Todo = (props) => {
                 <li>Save functionality</li>
                 <li>Profile</li>
                 <li>Theme</li>
+                <li> 
+                     <a href="https://visme.co/blog/website-color-schemes/">page for themes  </a></li>
                 <li>...add more</li>
                 
             </ul>
+
+            <h1>ISSUES</h1>
+            <ol>
+                <li>Navlink default hover color override</li>
+            </ol>
            
-        </Auxiliary>
+        </Main>
     )
 }
 

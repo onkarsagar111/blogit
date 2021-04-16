@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
 
 import classes from './sidebar.module.css';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+    const [attachedClasses, setAttachedClasses] = useState(props.miniMode === true ? classes.SidebarFull : classes.SidebarMini);
+
+    const collapseSidebar = () => {
+        setAttachedClasses(classes.SidebarMini);
+        props.collapseSidebar();
+    }
+    const openSidebar = () => {
+        setAttachedClasses(classes.SidebarFull);
+        props.expandSidebar();
+    }
+    const toggleSidebar = () => {
+        console.log(props.miniMode)
+        props.miniMode === true ? setAttachedClasses(classes.SidebarFull) : setAttachedClasses(classes.SidebarMini);
+        props.toggleSidebar();
+    }
+
 
     return (
-        <div className={classes.Sidebar}>
-            <ul className={classes.ul}>
-              <label className={classes.content}><Icon size="big" name='content'/></label>
+        <div className={attachedClasses}>
+                <div className={classes.content} ><Icon size="big" name='content' onClick={toggleSidebar}/></div>
+            <ul className={classes.ul} onMouseOver={openSidebar} onMouseLeave={collapseSidebar}>
                 <NavLink to="/createpost"
                     className={classes.Inactive}
+                    activeClassName={classes.ActiveClass}
                     activeStyle={{
-                        color: '#0072C6',
-                        fontSize: 'large'
+                        color: '#58c6d5',
                     }}
                 >
                     <li className={classes.NavigationItem}><Icon size="big" name='add' />
@@ -24,21 +41,21 @@ const Sidebar = () => {
 
                 <NavLink to="/allposts"
                     className={classes.Inactive}
+                    activeClassName={classes.ActiveClass}
                     activeStyle={{
-                        color: '#0072C6',
-                        fontSize: 'large'
+                        color: '#58c6d5'
                     }}
                 >
-                    <li className={classes.NavigationItem}> <Icon size="big" name='file alternate'  />
+                    <li className={classes.NavigationItem}> <Icon size="big" name='file alternate' />
                         <label className={classes.label}>All Posts</label>
                     </li>
                 </NavLink>
 
                 <NavLink to="/themes"
                     className={classes.Inactive}
+                    activeClassName={classes.ActiveClass}
                     activeStyle={{
-                        color: '#0072C6',
-                        fontSize: 'large'
+                        color: '#58c6d5'
                     }}
                 >
                     <li className={classes.NavigationItem}>  <Icon size="big" name='theme' />
@@ -48,9 +65,9 @@ const Sidebar = () => {
 
                 <NavLink to="/settings"
                     className={classes.Inactive}
+                    activeClassName={classes.ActiveClass}
                     activeStyle={{
-                        color: '#0072C6',
-                        fontSize: 'large'
+                        color: '#58c6d5'
                     }}
                 >
 
@@ -62,10 +79,9 @@ const Sidebar = () => {
 
                 <NavLink to="/todo"
                     className={classes.Inactive}
-                    activeClassName='active'
+                    activeClassName={classes.ActiveClass}
                     activeStyle={{
-                        color: '#0072C6',
-                        fontSize: 'large',
+                        color: '#58c6d5',
                         textDecoration: 'none'
                     }}>
                     <li className={classes.NavigationItem}><Icon size="big" name='tasks' />

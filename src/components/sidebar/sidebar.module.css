@@ -1,4 +1,17 @@
-.Sidebar {
+.SidebarMini {
+    background-color: rgb(43, 43, 43);
+    width: 4%;
+    height: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0%;
+    color: white;
+    transition: 0.5s;
+    white-space: nowrap;
+    z-index:-1;
+}
+
+.SidebarFull {
     background-color: rgb(43, 43, 43);
     width: 15%;
     height: 100%;
@@ -6,6 +19,9 @@
     top: 60px;
     left: 0%;
     color: white;
+    transition: 0.5s;
+    white-space: nowrap;
+    z-index: -1;
 }
 
 .ul {
@@ -14,6 +30,7 @@
     margin: 0;
     padding:0%;
     margin-top: 20px;
+    height: 100%;
 }
 
 .NavigationItem {
@@ -28,24 +45,37 @@
 
 .Inactive{
     text-decoration: none;
-    color: #f0ffff;
+    color: #848d95;
+}
+
+.Inactive:hover{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .NavigationItem a.Inactive:hover,
 .NavigationItem a.Inactive:active,
 .NavigationItem a.Inactive.active {
-    color: #0072C6;
+    color: #58c6d5;
     text-decoration: none;
 }
 
-.Sidebar li:hover{
-    border-left: #0072C6 3px solid;
+.SidebarMini li {
+    border-left: rgb(43, 43, 43) 3px solid;;
+}
+
+.SidebarFull li {
+    border-left: rgb(43, 43, 43) 3px solid;;
+}
+
+.ActiveClass li{
+    border-left: #58c6d5 3px solid;
     background-color: rgb(34, 34, 34);
 }
 
 .label {
     margin-left: 20px;
-
+    cursor: pointer;
 }
 
 .content {
@@ -54,15 +84,7 @@
     height: 40px;
     vertical-align: middle;
     text-decoration: none;
-    /* margin-top: 30px; */
-    /* margin-bottom: 30px; */
+    margin-top: 16px;
+    color: #848d95;
 }
 
-/* .li :hover {
-    background-color: rgb(43, 43, 43);
-    width: 20%;
-    height: 100%;
-    position: fixed;
-    top: 60px;
-    left: 0%;
-    color: white;} */
