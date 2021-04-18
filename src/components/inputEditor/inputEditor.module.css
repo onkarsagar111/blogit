@@ -1,0 +1,22 @@
+.Editor {
+    width: 75%; 
+    margin-left: 15px;
+}
+
+.InputArea {
+    height: 445px;
+    overflow: scroll;
+    padding: 16px;
+    background-color: #fff;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    border: #ccc solid 1px;
+}
+
+.superFancyBlockquote {
+  color: #999;
+  font-family: "Hoefler Text", Georgia, serif;
+  font-style: italic;
+  text-align: center;
+}

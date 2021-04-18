@@ -1,12 +1,30 @@
 .Body {
-    margin-left: 16px;
-    margin-top: 20px;
+  margin-left: 4vw;
+  margin-top: 20px;
+  width: 88vw;
+  resize: inherit;
+  overflow: auto;
+  background-color: #eceff1;
+  padding: 16px;
+  border-radius: 3px;
+  /* background-image: linear-gradient(white, #58c6d5); */
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    height: 40px;
+.buttonContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  margin-top: -38%;
+  margin-left: 69.25%;
+}
+.button {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.Input {
+  margin-top: 10px;
+  left: 1%;
+  height: 40px;
+  width: 65vw;
 }
