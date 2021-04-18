@@ -1,0 +1,56 @@
+.Navigations {
+    /* background-color: #282c34; */
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    /* border: white 1px solid; */
+    /* position: absolute; */
+    float: right;
+    /* margin-left: 53%; */
+    position: absolute;
+    right: 165px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.label {
+   margin-right: 30px;
+   margin-left: 30px;
+   padding: 0px;
+   margin-bottom: 0px;
+   height: 60px;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+.Inactive{
+    text-decoration: none;
+    color: #848d95;
+}
+
+.Inactive:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.ActiveClass label {
+    /* border-bottom: #58c6d5 3px solid; */
+    /* background-color: rgb(34, 34, 34); */
+    height: 60px;
+    color: #ffffff;
+}
+
+.circle-icon {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    padding: 30px;
+}

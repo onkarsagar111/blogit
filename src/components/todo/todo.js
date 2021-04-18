@@ -27,7 +27,7 @@ const Todo = (props) => {
 
             <h1>ISSUES</h1>
             <ol>
-                <li>Navlink default hover color override</li>
+                <li>min width of side bar</li>
             </ol>
            
         </Main>

@@ -20,3 +20,14 @@
     font-weight: bolder;
 
 }
+
+.SignIn {
+    /* margin-top: 12px;
+    margin-bottom: 10px; */
+    position: absolute;
+    float: right;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* border: blue 2px solid; */
+}

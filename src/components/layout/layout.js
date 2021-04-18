@@ -10,6 +10,10 @@ import CreatePost from '../createpost/createpost';
 import Settings from '../settings/settings';
 import Themes from '../themes/themes';
 import Todo from '../todo/todo';
+import Home from '../home/home';
+import About from '../about/about';
+import Team from '../team/team';
+import ContactUs from '../contactUs/contactUs';
 
 const Layout = (props) => {
 
@@ -28,6 +32,46 @@ const Layout = (props) => {
     return (
         <div className={classes.Layout}>
             <Switch>
+                <Route
+                    path="/home"
+                    exact
+                    render={(props) => {
+                        return (
+                            <Home {...props} miniMode={miniMode} />
+                        )
+                    }
+                    }
+                />
+                <Route
+                    path="/about"
+                    exact
+                    render={(props) => {
+                        return (
+                            <About {...props} miniMode={miniMode} />
+                        )
+                    }
+                    }
+                />
+                <Route
+                    path="/team"
+                    exact
+                    render={(props) => {
+                        return (
+                            <Team {...props} miniMode={miniMode} />
+                        )
+                    }
+                    }
+                />
+                <Route
+                    path="/contactUs"
+                    exact
+                    render={(props) => {
+                        return (
+                            <ContactUs {...props} miniMode={miniMode} />
+                        )
+                    }
+                    }
+                />
                 <Route
                     path="/createpost"
                     exact

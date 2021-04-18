@@ -16,16 +16,9 @@ const Sidebar = (props) => {
         setAttachedClasses(classes.SidebarFull);
         props.expandSidebar();
     }
-    const toggleSidebar = () => {
-        console.log(props.miniMode)
-        props.miniMode === true ? setAttachedClasses(classes.SidebarFull) : setAttachedClasses(classes.SidebarMini);
-        props.toggleSidebar();
-    }
-
 
     return (
         <div className={attachedClasses}>
-                <div className={classes.content} ><Icon size="big" name='content' onClick={toggleSidebar}/></div>
             <ul className={classes.ul} onMouseOver={openSidebar} onMouseLeave={collapseSidebar}>
                 <NavLink to="/createpost"
                     className={classes.Inactive}
@@ -34,7 +27,7 @@ const Sidebar = (props) => {
                         color: '#58c6d5',
                     }}
                 >
-                    <li className={classes.NavigationItem}><Icon size="big" name='add' />
+                    <li className={classes.NavigationItem}><Icon size="large" name='add' />
                         <label className={classes.label} >Create New Post</label>
                     </li>
                 </NavLink>
@@ -46,7 +39,7 @@ const Sidebar = (props) => {
                         color: '#58c6d5'
                     }}
                 >
-                    <li className={classes.NavigationItem}> <Icon size="big" name='file alternate' />
+                    <li className={classes.NavigationItem}> <Icon size="large" name='file alternate' />
                         <label className={classes.label}>All Posts</label>
                     </li>
                 </NavLink>
@@ -58,7 +51,7 @@ const Sidebar = (props) => {
                         color: '#58c6d5'
                     }}
                 >
-                    <li className={classes.NavigationItem}>  <Icon size="big" name='theme' />
+                    <li className={classes.NavigationItem}>  <Icon size="large" name='theme' />
                         <label className={classes.label}>Themes </label>
                     </li>
                 </NavLink>
@@ -71,7 +64,7 @@ const Sidebar = (props) => {
                     }}
                 >
 
-                    <li className={classes.NavigationItem}> <Icon size="big" name='setting' />
+                    <li className={classes.NavigationItem}> <Icon size="large" name='setting' />
                         <label className={classes.label}> Settings</label>
                     </li>
 
@@ -84,7 +77,7 @@ const Sidebar = (props) => {
                         color: '#58c6d5',
                         textDecoration: 'none'
                     }}>
-                    <li className={classes.NavigationItem}><Icon size="big" name='tasks' />
+                    <li className={classes.NavigationItem}><Icon size="large" name='tasks' />
                         <label className={classes.label}>TODO list</label>
                     </li>
                 </NavLink>
