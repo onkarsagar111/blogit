@@ -1,0 +1,21 @@
+.ErrorModal {
+    position: fixed;
+    top: 20vh;
+    width: 20%;
+    z-index: 100;
+    overflow: hidden;
+    float: right;
+    right: 5%;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.Error {
+    border: red solid 2px;
+}
+
+.Success {
+    border: green solid 2px;
+}

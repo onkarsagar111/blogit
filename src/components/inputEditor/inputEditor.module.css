@@ -8,9 +8,9 @@
     overflow: scroll;
     padding: 16px;
     background-color: #fff;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 2%;
+    /* margin-left: 5%;
+    margin-right: 5%; */
+    margin-top: 1%;
     border: #ccc solid 1px;
 }
 
@@ -19,4 +19,25 @@
   font-family: "Hoefler Text", Georgia, serif;
   font-style: italic;
   text-align: center;
+}
+
+.Toolbar {
+  padding: 6px 5px 0;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-start;
+  background: white;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+.rdw-inline-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  border: #ccc solid 1px;
 }

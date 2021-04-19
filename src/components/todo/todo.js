@@ -19,9 +19,14 @@ const Todo = (props) => {
                 <li>Save functionality</li>
                 <li>Profile</li>
                 <li>Theme</li>
-                <li> 
-                     <a href="https://visme.co/blog/website-color-schemes/">page for themes  </a></li>
-                <li>...add more</li>
+                <li><a href="https://visme.co/blog/website-color-schemes/">page for themes  </a></li>
+                <li>Redux implementation</li>
+                <li>Database connection (aws, firebase)</li>
+                <li>hosting</li>
+                <li>domain</li>
+                <li>AWS</li>
+                <li>Axios</li>
+                <li></li>
                 
             </ul>
 

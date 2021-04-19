@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { Button, Icon, Input } from "semantic-ui-react";
+import { EditorState, Modifier, convertToRaw } from "draft-js";
+import draftToHtml from 'draftjs-to-html';
+import htmlToDraft from 'html-to-draftjs';
+import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
+import axios from "../../axios";
 import Main from "../../helper/main/main";
 import InputEditor from "../inputEditor/inputEditor";
 import HorizontalLine from "../UI/horizontalLine/horizontalLine";
 import VerticalLine from "../UI/verticalLine/verticalLine";
 
 import classes from "./createpost.module.css";
+import ErrorModal from "../UI/errorModal/errorModal";
 
 const CreatePost = (props) => {
   var initialForm = {
@@ -13,13 +20,7 @@ const CreatePost = (props) => {
       isValid: true,
       type: "text",
       placeholder: "Enter Title",
-      value: "",
-    },
-    desc: {
-      isValid: true,
-      type: "text",
-      placeholder: "Enter Desc",
-      value: "",
+      value: ""
     },
     content: {
       isValid: false,
@@ -39,21 +40,56 @@ const CreatePost = (props) => {
   };
 
   const [inputForm, setInputForm] = useState(initialForm);
+  const [error, setError] = useState(null);
+  const [editorState, setEditorState] = useState(() =>
+  EditorState.createEmpty()
+  );
+  const [editorContentHTML, setEditorContentHTML] = useState(draftToHtml(convertToRaw(editorState.getCurrentContent())));
+
+  const changeTitleHandler = (event) => {
+    let tempInputForm = {...inputForm}
+    let tempTitle = tempInputForm.title;
+    tempTitle.value = event.target.value;
+    tempInputForm.title = tempTitle;
+    console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())))
+    setInputForm(tempInputForm);
+  };
+
+  const publishBlog = () => {
+    let object = {
+      title: inputForm.title.value,
+      content: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+      country: "India"
+    }
+    axios
+      .post("/blogs.json", object)
+      .then((response) => {
+        setError(<ErrorModal success message='Blog has been Published successfully.'/>);
+      }).catch(error => {
+        setError(<ErrorModal message='Some error occured while publishing the Blog!'/>);
+      });
+  };
 
   return (
     <Main miniMode={props.miniMode}>
       <div className={classes.Body}>
+        {error}
         <VerticalLine height="83%" color="grey" left="73%" size="1px" />
         <Input
           transparent
           placeholder="Title"
           className={classes.Input}
           size="huge"
+          onChange={(event) => changeTitleHandler(event)}
         />
         <HorizontalLine width="65%" color="grey" left="6%" size="1px" />
         <br />
         <br />
-        <InputEditor />
+        <InputEditor
+          editorState={editorState}
+          setEditorState={setEditorState}
+          onTabPress={onTabPress}
+        />
         <br />
         <div className={classes.buttonContainer}>
           <Button icon labelPosition="left" primary className={classes.button}>
@@ -65,6 +101,7 @@ const CreatePost = (props) => {
             labelPosition="left"
             color="green"
             className={classes.button}
+            onClick={publishBlog}
           >
             <Icon name="send" />
             Publish
@@ -73,6 +110,24 @@ const CreatePost = (props) => {
       </div>
     </Main>
   );
+
+  // editor functions
+  function onTabPress(event) {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      const tabCharacter = "          ";
+      let currentState = editorState;
+      let newContentState = Modifier.replaceText(
+        currentState.getCurrentContent(),
+        currentState.getSelection(),
+        tabCharacter
+      );
+
+      setEditorState(
+        EditorState.push(currentState, newContentState, "insert-characters")
+      );
+    }
+  }
 };
 
 export default CreatePost;
