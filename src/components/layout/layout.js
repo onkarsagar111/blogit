@@ -14,6 +14,7 @@ import Home from '../home/home';
 import About from '../about/about';
 import Team from '../team/team';
 import ContactUs from '../contactUs/contactUs';
+import FullPost from '../fullPost/fullPost';
 
 const Layout = (props) => {
 
@@ -88,6 +89,16 @@ const Layout = (props) => {
                     render={(props) => {
                         return (
                             <AllPosts {...props} miniMode={miniMode} />
+                        )
+                    }
+                    }
+                />
+                <Route
+                    path="/fullpost"
+                    exact
+                    render={(props) => {
+                        return (
+                            <FullPost {...props} miniMode={miniMode} />
                         )
                     }
                     }

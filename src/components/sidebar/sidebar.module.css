@@ -8,7 +8,10 @@
     color: white;
     transition: 0.4s;
     white-space: nowrap;
-    z-index:-1;
+    /* z-index:-1; */
+    z-index:10;
+    overflow: hidden;
+
 }
 
 .SidebarFull {
@@ -21,7 +24,9 @@
     color: white;
     transition: 0.4s;
     white-space: nowrap;
-    z-index: -1;
+    /* z-index: -1; */
+    z-index:10;
+
 }
 
 .ul {
@@ -76,6 +81,8 @@
 .label {
     margin-left: 20px;
     cursor: pointer;
+    z-index: -50;
+
 }
 
 .content {

@@ -6,6 +6,8 @@
     padding: 16px;
     background-color: rgb(192, 255, 167);
     cursor: pointer;
+    height: 300px;
+    overflow: hidden;
 }
 
 .Body:hover {

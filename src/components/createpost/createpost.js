@@ -42,31 +42,50 @@ const CreatePost = (props) => {
   const [inputForm, setInputForm] = useState(initialForm);
   const [error, setError] = useState(null);
   const [editorState, setEditorState] = useState(() =>
-  EditorState.createEmpty()
+    EditorState.createEmpty()
   );
   const [editorContentHTML, setEditorContentHTML] = useState(draftToHtml(convertToRaw(editorState.getCurrentContent())));
 
   const changeTitleHandler = (event) => {
-    let tempInputForm = {...inputForm}
+    let tempInputForm = { ...inputForm }
     let tempTitle = tempInputForm.title;
     tempTitle.value = event.target.value;
     tempInputForm.title = tempTitle;
-    console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())))
+    console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
     setInputForm(tempInputForm);
   };
+
+  const optimizeHtml = (htmlString) => {
+    var str = htmlString;
+    let index = 0;
+    while (str.indexOf("<img", index) !== -1) {
+      var start = str.indexOf('<img',index);
+      var end = str.indexOf('>', start);
+      var res = str.substring(start, end);
+
+      var newRes = res.replace("height: auto", "height: 100%");
+      newRes = newRes.replace("width: auto", "width: 100%");
+      str = str.replace(res, newRes);
+      // str = newStr;
+      index = start+1;
+    }
+
+    return str;
+  }
+
 
   const publishBlog = () => {
     let object = {
       title: inputForm.title.value,
-      content: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+      content: optimizeHtml(draftToHtml(convertToRaw(editorState.getCurrentContent()))),
       country: "India"
     }
     axios
       .post("/blogs.json", object)
       .then((response) => {
-        setError(<ErrorModal success message='Blog has been Published successfully.'/>);
+        setError(<ErrorModal success message='Blog has been Published successfully.' />);
       }).catch(error => {
-        setError(<ErrorModal message='Some error occured while publishing the Blog!'/>);
+        setError(<ErrorModal message='Some error occured while publishing the Blog!' />);
       });
   };
 

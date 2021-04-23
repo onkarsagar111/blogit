@@ -6,18 +6,18 @@
     width: 96%;
     overflow: scroll;
     background-color: #58c6d5;
-    z-index: 1;
+    z-index: 0;
     transition: 0.4s;
 }
 
 .MainMax {
     position: fixed;
     top: 60px;
-    left: 15%;
+    left: 4%;
     height: 100%;
-    width: 85%;
+    width: 96%;
     overflow: scroll;
     background-color: #58c6d5;
-    z-index: 1;
+    z-index: 0;
     transition: 0.4s;
 }
